@@ -2,16 +2,16 @@ import React from 'react';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { IoEarthOutline } from 'react-icons/io5';
 import { Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 import LoginInput from '../components/LoginInput';
+import { asyncSetAuthUser } from '../states/authUser/action';
 
 function LoginPage() {
-  const dispatch = null; // @TODO: get dispatch function from store
+  const dispatch = useDispatch(); // @TODO: get dispatch function from store
 
   const onLogin = ({ id, password }) => {
-    // eslint-disable-next-line no-console
-    console.log(id, password);
-    dispatch();
     // @TODO: dispatch async action to login
+    dispatch(asyncSetAuthUser({ id, password }));
   };
 
   return (
