@@ -1,10 +1,13 @@
 import React, { StrictMode } from 'react';
-import ReactDOM from 'react-dom/client';
-// eslint-disable-next-line import/no-extraneous-dependencies
+import { createRoot } from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 import App from './App';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+import './styles/style.css';
+
+const root = createRoot(document.getElementById('root'));
+
+// TODO: wrap App with store provider
 root.render(
   <BrowserRouter>
     <StrictMode>
